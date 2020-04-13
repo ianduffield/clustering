@@ -16,7 +16,7 @@ public class Sample {
 	public Sample(double[] values){
 		this.sample = new ArrayList<Double>();
 		for(int i = 0; i<values.length; i++){
-			sample.add(i,values[i]);
+			sample.add(i, values[i]);
 		}
 	}
 	
@@ -29,5 +29,19 @@ public class Sample {
 		System.out.println("s1=" + s1);
 		System.out.println("s2=" + s2);
 	}
-
+	
+	public int size(){
+		return this.sample.size();
+	}
+	
+	public double get(int index){
+		return this.sample.get(index);
+	}
+	
+	public float Distance(Sample p2){
+		float distance = 0;
+		for(int i = 0; i < p2.size(); i++){
+			distance += Math.pow(Math.abs(p2.get(i) - this.sample.get(i)), 2);
+		} return ((float) Math.sqrt(distance));
+	}
 }
