@@ -30,14 +30,17 @@ public class Sample {
 		System.out.println("s2=" + s2);
 	}
 	
+	// Override to find size
 	public int size(){
 		return this.sample.size();
 	}
 	
+	// Override to access ArrayList Index
 	public double get(int index){
 		return this.sample.get(index);
 	}
 	
+	// Part 1
 	public float Distance(Sample p2){
 		float distance = 0;
 		for(int i = 0; i < p2.size(); i++){
