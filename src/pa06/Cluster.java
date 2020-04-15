@@ -19,6 +19,7 @@ public class Cluster{
 	Random random = new Random();
 	
 	// Parameters for samples should be able to have as many Samples as requried
+	// Constructor is used after each individual cluster has been made
 	public Cluster() {
 		Points = new ArrayList<>();
 		
@@ -33,11 +34,16 @@ public class Cluster{
 		clusterPoint = Points.get(randomIndex);
 	}
 	
+	// Constructor only used for original data
+	public Cluster() { // Pass in original data
+		
+	}
+	
 	// Part 2
-	public float ClusterDistance(){
+	public float ClusterPointDistance(){
 		float distance = 0;
 		for(int i = 0; i < Points.size(); i++){
-			distance += clusterPoint.Distance(Points.get(i)); 
+			distance += clusterPoint.PointDistance(Points.get(i)); 
 		}
 		return distance;
 	}
