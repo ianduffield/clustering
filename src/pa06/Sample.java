@@ -21,7 +21,7 @@ public class Sample {
 			sample.add(i, values[i]);
 		}
 	}
-	
+/*	
 	public static void main(String[] args) {
 		System.out.println("testing for the Sample class.");
 		double[] p1 = {1d, 2d, 3.14, 2.71};
@@ -31,6 +31,7 @@ public class Sample {
 		System.out.println("s1=" + s1);
 		System.out.println("s2=" + s2);
 	}
+	*/
 	
 	// Override to find size
 	public int size(){
