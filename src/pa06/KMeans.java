@@ -2,7 +2,7 @@
  * 
  */
 package pa06;
-
+import java.util.*;
 /**
  * @author Ghazal
  *Create the KMeans class with a main method that asks for the file name and the number of clusters (but doesn't do anything else)
@@ -17,9 +17,9 @@ public class KMeans {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Scanner data = new Scanner(System.in);
-		  System.out.print("Filename: ");
 		  System.out.print("K: ");
-		  int K = in.nextInt();
+		  System.out.print("Filename: ");
+		  String point = data.nextLine();
 	}
 
 }

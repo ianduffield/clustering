@@ -19,7 +19,7 @@ public class Cluster{
 	Random random = new Random();
 	
 	// Parameters for samples should be able to have as many Samples as requried
-	public Cluster(Sample s1, Sample s2) {
+	public Cluster(K, ) {
 		Points = new ArrayList<>();
 		
 		// Adding s1 & s2 to Points
