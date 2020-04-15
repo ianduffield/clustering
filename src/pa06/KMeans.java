@@ -18,8 +18,15 @@ public class KMeans {
 		// TODO Auto-generated method stub
 		Scanner data = new Scanner(System.in);
 		  System.out.print("K: ");
+		  int clustersNum = data.nextInt();
 		  System.out.print("Filename: ");
-		  String point = data.nextLine();
+		  String FileName = data.nextLine();
+		  Scanner file = new Scanner(FileName);
+		  Cluster clusters = new Cluster(clustersNum);
+		  while(file.hasNextInt()){
+			  double[] point
+			  Sample point = new Sample(file.nextDouble());
+		  }
 	}
 
 }
