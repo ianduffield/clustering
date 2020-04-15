@@ -16,7 +16,10 @@ public class KMeans {
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
+		Scanner data = new Scanner(System.in);
+		  System.out.print("Filename: ");
+		  System.out.print("K: ");
+		  int K = in.nextInt();
 	}
 
 }
