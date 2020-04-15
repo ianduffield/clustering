@@ -19,19 +19,16 @@ public class Cluster{
 	Random random = new Random();
 	
 	// Parameters for samples should be able to have as many Samples as requried
-	public Cluster(int k) {
+	public Cluster() {
 		Points = new ArrayList<>();
 		
 		// Adding s1 & s2 to Points
-		Points.add(s1);
-		Points.add(s2);
+		// Points.add(s1);
+		// Points.add(s2);
 		
 		// Random Index for Cluster Point
-		for(int i = 0; i < k; i++){
-			int randomIndex = random.nextInt(Points.size());
-		}
+		int randomIndex = random.nextInt(Points.size());
 
-		
 		// Retrieve ClusterPoint
 		clusterPoint = Points.get(randomIndex);
 	}
