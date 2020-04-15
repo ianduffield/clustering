@@ -46,7 +46,7 @@ public class KMeans {
 		while(file.hasNextLine()){
 			// Examining each line of the file
 			while(file.hasNextInt()) {
-			  double[] point
+			  double[] point;
 			  Sample point = new Sample(file.nextDouble());
 			}
 		  }

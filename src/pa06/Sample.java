@@ -18,7 +18,7 @@ public class Sample {
 	public Sample(double[] values){
 		this.sample = new ArrayList<Double>();
 		for(int i = 0; i<values.length; i++){
-			sample.add(i, values[i]);
+			sample.add(values[i]);
 		}
 	}
 /*	
