@@ -7,6 +7,8 @@ import java.util.ArrayList;
 
 /**
  * A Sample represents a vector of doubles to be used in a clustering program...
+ * you need methods to find the distance between two samples.
+
  * @author iandu
  *
  */
