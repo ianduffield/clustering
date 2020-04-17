@@ -26,13 +26,18 @@ public class KMeans {
 		System.out.print("K: ");
 		int clustersNum = input.nextInt();
 		
+		// initiating cluster arraylists
+		Cluster clusters = new cluster();
+		
+				
+		
 		// Retrieve file
 		System.out.print("Filename: ");
 		String FileName0 = input.nextLine();
 		fileRead(FileName0,clustersNum );
 		
 	
-	public void fileRead( String FileName, int K ) {
+	public void fileRead( String FileName ) {
 		
 			File file = new File( FileName );
 		  
@@ -42,9 +47,7 @@ public class KMeans {
 			Cluster originalData = new Cluster();
 			
 			/*
-			// Makes an array of size of k
-			Cluster[] clusters = new Cluster[K];
-		
+			
 			
 			// Initializing each cluster in Clusters
 			for(int i = 0; i < K; i++) {

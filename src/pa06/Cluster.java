@@ -13,10 +13,42 @@ import java.util.Random;
  *
  */
 public class Cluster{
-	Sample clusterPoint;
-	ArrayList<Sample> Points;
-	
+	ArrayList<Sample> ClusterPoints;
+	ArrayList<Sample> AllPoints;
+
 	Random random = new Random();
+	
+	public addOriginal(Sample point) {
+		AllPoints.add(point);
+		
+	}
+		public 
+	
+	
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	/*
+	
+	
 	
 	// Parameters for samples should be able to have as many Samples as requried
 	// Constructor is used after each individual cluster has been made
@@ -53,3 +85,6 @@ public class Cluster{
 		return Points.get(index);
 	}
 }
+
+	
+	*/
