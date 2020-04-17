@@ -22,6 +22,13 @@ public class Sample {
 		
 	}
 	
+	public int getX(){
+		return X;
+	}
+	
+	public int getY(){
+		return Y;
+	}
 	
 	
 	
