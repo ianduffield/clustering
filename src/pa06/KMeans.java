@@ -28,34 +28,51 @@ public class KMeans {
 		
 		// Retrieve file
 		System.out.print("Filename: ");
-		String FileName = input.nextLine();
-	    File file = new File(FileName);
-	    
-	  
-	    
-	    Scanner data = new Scanner(file);
+		String FileName0 = input.nextLine();
+		fileRead(FileName0,clustersNum );
 		
-		// Send all information (Original Data) to make clusters
-		Cluster originalData = new Cluster();
+	
+	public void fileRead( String FileName, int K ) {
 		
-		// Makes an array of size of k
-		Cluster[] clusters = new Cluster[clustersNum];
-		
-		// Initializing each cluster in Clusters
-		for(int i = 0; i < clustersNum; i++) {
-			// Constructor of Cluster creates a clusterPoint
-			clusters[i] = new Cluster(); // Still need to pass in information to cluster
+		 File file = new File(FileName);
+		    
+		    
+		    Scanner data = new Scanner(file);
+			
+			// Send all information (Original Data) to make clusters
+			Cluster originalData = new Cluster();
+			
+			// Makes an array of size of k
+			Cluster[] clusters = new Cluster[K];
+			
+			// Initializing each cluster in Clusters
+			for(int i = 0; i < K; i++) {
+				// Constructor of Cluster creates a clusterPoint
+				clusters[i] = new Cluster(); // Still need to pass in information to cluster
+			}
+			
+			// Part 4
+			// Reading the file line by line
+			while(file.hasNextLine()){
+				// Examining each line of the file
+				while(file.hasNextInt()) {
+				  double[] point;
+				  Sample point = new Sample(file.nextDouble());
+				}
+			  }
 		}
 		
-		// Part 4
-		// Reading the file line by line
-		while(file.hasNextLine()){
-			// Examining each line of the file
-			while(file.hasNextInt()) {
-			  double[] point;
-			  Sample point = new Sample(file.nextDouble());
-			}
-		  }
+		
+		
+		
+		
 	}
+
+	private static void fileRead(String fileName0, int clustersNum) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	
 
 }
