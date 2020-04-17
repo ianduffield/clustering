@@ -3,6 +3,8 @@
  */
 package pa06;
 import java.util.*;
+import java.io.File;
+import java.io.FileNotFoundException;
 /**
  * @author Ghazal
  *Create the KMeans class with a main method that asks for the file name and the number of clusters (but doesn't do anything else)
@@ -16,18 +18,22 @@ public class KMeans {
 	/**
 	 * @param args
 	 */
-	public static void main(String[] args) {
+	public static void main(String[] args) throws FileNotFoundException {
 		// TODO Auto-generated method stub
-		Scanner data = new Scanner(System.in);
+		Scanner input = new Scanner(System.in);
 		
 		// K is the number of clusters
 		System.out.print("K: ");
-		int clustersNum = data.nextInt();
+		int clustersNum = input.nextInt();
 		
 		// Retrieve file
 		System.out.print("Filename: ");
-		String FileName = data.nextLine();
-		Scanner file = new Scanner(FileName);
+		String FileName = input.nextLine();
+	    File file = new File(FileName);
+	    
+	  
+	    
+	    Scanner data = new Scanner(file);
 		
 		// Send all information (Original Data) to make clusters
 		Cluster originalData = new Cluster();
