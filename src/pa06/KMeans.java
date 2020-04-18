@@ -18,6 +18,13 @@ public class KMeans {
 	/**
 	 * @param args
 	 */
+	Cluster[] clusters;
+	
+	
+	public KMeans(int k){
+		this.clusters = new Cluster[k];
+	}
+	
 	public static void main(String[] args) throws FileNotFoundException {
 		// TODO Auto-generated method stub
 		Scanner input = new Scanner(System.in);
@@ -34,10 +41,10 @@ public class KMeans {
 		// Retrieve file
 		System.out.print("Filename: ");
 		String FileName0 = input.nextLine();
-		fileRead(FileName0,clustersNum);
+		fileRead(FileName0);
 		
 	}
-	public static void fileRead(String FileName, int k) {
+	public static void fileRead(String FileName) {
 		
 			File file = new File(FileName);
 		  
@@ -45,16 +52,7 @@ public class KMeans {
 			
 			// Send all information (Original Data) to make clusters
 			Cluster originalData = new Cluster();
-			
-			/*
-			
-			
-			// Initializing each cluster in Clusters
-			for(int i = 0; i < K; i++) {
-				// Constructor of Cluster creates a clusterPoint
-				clusters[i] = new Cluster(); // Still need to pass in information to cluster
-			}
-				*/
+
 			// Part 4
 			// Reading the file line by line
 			while(scan.hasNextLine()){
@@ -67,7 +65,28 @@ public class KMeans {
 				
 			  }
 		}
-		
+	//Initializes the clustering process but dividing the originalData into equal parts and choosing random ClusterPoints for each 
+		public void Classify(Cluster data, int k){
+			int size = data.size()/k;
+			for(int i = 0; i < k; i++){
+				this.clusters[i] = new Cluster();
+			} for(int j = 0; j < k; j++){
+				for(int m = (size*j); m < (size*j+1); m++){
+					this.clusters[j].add(data.get(m));
+				}
+			} for (int n = 0; n < k; n++){
+				this.clusters[n].chooseClusterPoint();
+			}
+		}
+	
+		public static void Reclassify(Cluster data, int k){
+				// Initializing each cluster in Clusters
+				for(int i = 0; i < k; i++) {
+					// Constructor of Cluster creates a clusterPoint
+					data.clusters[i] = new Cluster(); // Still need to pass in information to cluster
+			}
+			data.ClosestClusterPoint();
+		}
 		
 		
 		
