@@ -29,8 +29,12 @@ public class Sample {
 	public double getY(){
 		return this.Y;
 	}
-	
-	
+	public float Distance(Sample centerPoint){
+		float distance = 0;
+		distance += Math.pow(Math.abs(centerPoint.getX() - this.getX()), 2);
+		distance += Math.pow(Math.abs(centerPoint.getY() - this.getY()), 2);
+		return ((float) Math.sqrt(distance));
+	}
 	
 	
 }
@@ -83,6 +87,16 @@ public class Sample {
 		return this.sample.get(index);
 	}
 	
+		}
+	// Override to find size
+		public int size(){
+			return this.sample.size();
+		}
+		
+		// Override to access ArrayList Index
+		public double get(int index){
+			return this.sample.get(index);
+		}
 	// Part 1
 	public float Distance(Sample p2){
 		float distance = 0;

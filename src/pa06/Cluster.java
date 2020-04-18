@@ -42,6 +42,20 @@ public class Cluster{
 
 		
 	}
+	
+	public float ClusterPointDistance(){
+		float distance = 0;
+		for(int i = 0; i < SamplePoints.size(); i++){
+			distance += ClusterPoint.Distance(SamplePoints.get(i)); 
+		}
+		return distance;
+	}
+	public Sample ClosestClusterPoint() {
+		
+		
+		return ClusterPoint;
+		
+	}
 	}
 	
 	
