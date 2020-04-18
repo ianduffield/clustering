@@ -18,6 +18,14 @@ public class KMeans {
 	/**
 	 * @param args
 	 */
+	Cluster[] clusters;
+	Cluster originalData;
+	
+	public KMeans(int k){
+		this.clusters = new Cluster[k];
+		
+	}
+	
 	public static void main(String[] args) throws FileNotFoundException {
 		// TODO Auto-generated method stub
 		Scanner input = new Scanner(System.in);
@@ -26,6 +34,8 @@ public class KMeans {
 		System.out.print("K: ");
 		int clustersNum = input.nextInt();
 		
+		KMeans Km = new KMeans(clustersNum);
+
 		// initiating cluster arraylists
 		Cluster clusters = new Cluster();
 		
@@ -34,27 +44,17 @@ public class KMeans {
 		// Retrieve file
 		System.out.print("Filename: ");
 		String FileName0 = input.nextLine();
-		fileRead(FileName0,clustersNum);
-		
+		Km.fileRead(FileName0);
+		Km.Classify (clustersNum);
+		Km.Reclassify (clustersNum );
 	}
-	public static void fileRead(String FileName, int k) {
+	public void fileRead(String FileName) {
 		
 			File file = new File(FileName);
 		  
 		    Scanner scan = new Scanner(FileName);
 			
-			// Send all information (Original Data) to make clusters
-			Cluster originalData = new Cluster();
-			
-			/*
-			
-			
-			// Initializing each cluster in Clusters
-			for(int i = 0; i < K; i++) {
-				// Constructor of Cluster creates a clusterPoint
-				clusters[i] = new Cluster(); // Still need to pass in information to cluster
-			}
-				*/
+
 			// Part 4
 			// Reading the file line by line
 			while(scan.hasNextLine()){
@@ -63,11 +63,52 @@ public class KMeans {
 				double	X = coordinates.nextDouble();
 				double	Y = coordinates.nextDouble();
 				Sample point = new Sample(X,Y);
-				originalData.add(point);
+				this.originalData.add(point);
 				
 			  }
 		}
-		
+	//Initializes the clustering process but dividing the originalData into equal parts and choosing random ClusterPoints for each 
+		public void Classify(int k){
+			int size = this.originalData.size()/k;
+			for(int i = 0; i < k; i++){
+				this.clusters[i] = new Cluster();
+			} for(int j = 0; j < k; j++){
+				for(int m = (size*j); m < (size*j+1); m++){
+					this.clusters[j].add(this.originalData.get(m));
+				}
+			} for (int n = 0; n < k; n++){
+				this.clusters[n].chooseClusterPoint();
+			}
+		}
+	
+		public void Reclassify(int k){
+			
+			
+			for(int i =0; i < this.originalData.size(); i++){
+				for(int z = 0; z < k; z++){
+					Sample ClusterPoint = clusters[z].ClusterPoint;
+					this.clusters[z]= new Cluster();
+				Sample Closest = this.originalData.get(0);
+				
+				if(Closest.Distance(ClusterPoint) > this.originalData.get(i).Distance(ClusterPoint) || this.originalData.get(i).Distance(ClusterPoint)!= 0){
+					Closest = this.originalData.get(i);
+					this.clusters[z].add(Closest);
+				}
+			
+			}
+			
+			}
+			
+			
+				// Initializing each cluster in Clusters
+				for(int i = 0; i < originalData.size(); i++) {
+					originalData.get(i).Distance(k)
+					
+					// Constructor of Cluster creates a clusterPoint
+					data.clusters[i] = new Cluster(); // Still need to pass in information to cluster
+			}
+			data.ClosestClusterPoint();
+		}
 		
 		
 		
