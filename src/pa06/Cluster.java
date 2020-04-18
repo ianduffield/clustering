@@ -27,6 +27,35 @@ public class Cluster{
 		this.ClusterPoint = this.SamplePoints.get(random.nextInt(this.SamplePoints.size()));
 	
 		}
+	
+	public void add(Sample sample){
+		this.SamplePoints.add(sample);
+	}
+	public void print () {
+		System.out.println ("[");
+		for (int i=0; i< this.SamplePoints.size();i++) {
+			System.out.print("{"+SamplePoints.get(i).getX() +" " + SamplePoints.get(i).getY()+"}, ");
+
+		}
+		System.out.print ("{ "+this.ClusterPoint.getX()+ " "+ this.ClusterPoint.getY()+"}, ");
+		System.out.print("]");
+
+		
+	}
+	
+	public float ClusterPointDistance(){
+		float distance = 0;
+		for(int i = 0; i < SamplePoints.size(); i++){
+			distance += ClusterPoint.Distance(SamplePoints.get(i)); 
+		}
+		return distance;
+	}
+	public Sample ClosestClusterPoint() {
+		
+		
+		return ClusterPoint;
+		
+	}
 	}
 	
 	
