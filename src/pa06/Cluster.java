@@ -81,6 +81,24 @@ public class Cluster{
 		}
 		return Closest;
 	}
+	public void Average() {
+		int newX = 0;
+		int newY = 0;
+		for (Sample S: SamplePoints) {
+			newX += S.getX();
+			
+		}
+		for (Sample S: SamplePoints) {
+			newY += S.getY();
+			
+		}
+		
+		int AvgX = newX/SamplePoints.size();
+		int AvgY = newY/SamplePoints.size();
+		this.ClusterPoint = new Sample (AvgX, AvgY);
+		
+		
+	}
 	
 }
 	
