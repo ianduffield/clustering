@@ -82,38 +82,23 @@ public class KMeans {
 		}
 	
 		public void Reclassify(int k){
-			
-			
+			for(int j = 0; j < k; j++){
+				this.clusters[j] = new Cluster(this.clusters[j].ClusterPoint);
+			}
+			Sample Closest = this.clusters[0].ClusterPoint;
+			int closestIndex = 0;
 			for(int i =0; i < this.originalData.size(); i++){
-				for(int z = 0; z < k; z++){
-					Sample ClusterPoint = clusters[z].ClusterPoint;
-					this.clusters[z]= new Cluster();
-				Sample Closest = this.originalData.get(0);
-				
-				if(Closest.Distance(ClusterPoint) > this.originalData.get(i).Distance(ClusterPoint) || this.originalData.get(i).Distance(ClusterPoint)!= 0){
-					Closest = this.originalData.get(i);
-					this.clusters[z].add(Closest);
+				for(int z = 0; z < k; z++){				
+				if(Closest.Distance(this.originalData.get(i)) > this.clusters[z].ClusterPoint.Distance(this.originalData.get(i)) || this.clusters[z].ClusterPoint.Distance(this.originalData.get(i))!= 0){
+					Closest = this.clusters[z].ClusterPoint;
+					closestIndex = z;
 				}
-			
-			}
-			
-			}
-			
-			
-				// Initializing each cluster in Clusters
-				for(int i = 0; i < originalData.size(); i++) {
-					originalData.get(i).Distance(k)
-					
-					// Constructor of Cluster creates a clusterPoint
-					data.clusters[i] = new Cluster(); // Still need to pass in information to cluster
-			}
-			data.ClosestClusterPoint();
+			} this.clusters[closestIndex].add(this.originalData.get(i));
 		}
-		
-		
-		
-		
 	}
+
+		
+}
 
 	
 

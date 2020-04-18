@@ -18,6 +18,14 @@ public class Cluster{
 
 	Random random = new Random();
 	
+	public Cluster(Sample ClusterPoint){
+		this.ClusterPoint = ClusterPoint;
+	}
+	
+	public Cluster(){
+		
+	}
+	
 	
 	public void addOriginal(Sample point) {
 		this.SamplePoints.add(point);
