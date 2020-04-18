@@ -51,7 +51,11 @@ public class Cluster{
 		return distance;
 	}
 	public Sample ClosestClusterPoint() {
-		
+		float olddistance = 0;
+		for(int i = 0; i < SamplePoints.size(); i++) {
+			distance = SamplePoints.get(i).Distance(ClusterPoint);
+			if ()
+		}
 		
 		return ClusterPoint;
 		
