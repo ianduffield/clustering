@@ -13,18 +13,20 @@ import java.util.Random;
  *
  */
 public class Cluster{
-	ArrayList<Sample> ClusterPoints;
-	ArrayList<Sample> AllPoints;
+	ArrayList<Sample> SamplePoints;
+	Sample ClusterPoint;
 
 	Random random = new Random();
 	
-	public addOriginal(Sample point) {
-		AllPoints.add(point);
+	public void addOriginal(Sample point) {
+		this.SamplePoints.add(point);
 		
 	}
-		public 
+	public void chooseClusterPoint(){
+		// Random Index for Cluster Point
+		this.ClusterPoint = this.SamplePoints.get(random.nextInt(this.SamplePoints.size()));
 	
-	
+		}
 	}
 	
 	
@@ -59,8 +61,6 @@ public class Cluster{
 		// Points.add(s1);
 		// Points.add(s2);
 		
-		// Random Index for Cluster Point
-		int randomIndex = random.nextInt(Points.size());
 
 		// Retrieve ClusterPoint
 		clusterPoint = Points.get(randomIndex);

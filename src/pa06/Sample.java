@@ -16,7 +16,7 @@ public class Sample {
 	int X;
 	int Y; 
 	
-	public void sample(int X,int Y) {
+	public Sample(int X,int Y) {
 		this.X = X;
 		this.Y = Y;
 		
