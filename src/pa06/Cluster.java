@@ -31,6 +31,17 @@ public class Cluster{
 	public void add(Sample sample){
 		this.SamplePoints.add(sample);
 	}
+	public void print () {
+		System.out.println ("[");
+		for (Sample point: SamplePoints) {
+			System.out.print("{"point.getX() +" " + point.getY()+"}, ");
+
+		}
+		System.out.print ("{ "this.ClusterPoint.getX()+ " "+ this.ClusterPoint.getY()+"}, ");
+		System.out.print("]");
+
+		
+	}
 	}
 	
 	

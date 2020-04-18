@@ -23,11 +23,11 @@ public class Sample {
 	}
 	
 	public double getX(){
-		return X;
+		return this.X;
 	}
 	
 	public double getY(){
-		return Y;
+		return this.Y;
 	}
 	
 	
