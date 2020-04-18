@@ -27,6 +27,10 @@ public class Cluster{
 		this.ClusterPoint = this.SamplePoints.get(random.nextInt(this.SamplePoints.size()));
 	
 		}
+	
+	public void add(Sample sample){
+		this.SamplePoints.add(sample);
+	}
 	}
 	
 	

@@ -27,21 +27,21 @@ public class KMeans {
 		int clustersNum = input.nextInt();
 		
 		// initiating cluster arraylists
-		Cluster clusters = new cluster();
+		Cluster clusters = new Cluster();
 		
 				
 		
 		// Retrieve file
 		System.out.print("Filename: ");
 		String FileName0 = input.nextLine();
-		fileRead(FileName0,clustersNum );
+		fileRead(FileName0,clustersNum);
 		
-	
-	public void fileRead( String FileName ) {
+	}
+	public static void fileRead(String FileName, int k) {
 		
-			File file = new File( FileName );
+			File file = new File(FileName);
 		  
-		    Scanner data = new Scanner( file );
+		    Scanner scan = new Scanner(FileName);
 			
 			// Send all information (Original Data) to make clusters
 			Cluster originalData = new Cluster();
@@ -57,15 +57,13 @@ public class KMeans {
 				*/
 			// Part 4
 			// Reading the file line by line
-			while(data.hasNextLine()){
-				
+			while(scan.hasNextLine()){
 				String line = scan.nextLine();
-				
-			    Scanner coordinates = new Scanner( line );
-					X = coordinates.nextInt();
-					Y = coordinates.nextInt();
-				  Sample point = new Sample(X,Y);
-				  originalData.add(point);
+			    Scanner coordinates = new Scanner(line);
+				double	X = coordinates.nextDouble();
+				double	Y = coordinates.nextDouble();
+				Sample point = new Sample(X,Y);
+				originalData.add(point);
 				
 			  }
 		}
@@ -77,9 +75,7 @@ public class KMeans {
 	}
 
 	
-	
 
-}
 
 
 

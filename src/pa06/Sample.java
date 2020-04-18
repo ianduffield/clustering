@@ -13,20 +13,20 @@ import java.util.ArrayList;
  *
  */
 public class Sample {
-	int X;
-	int Y; 
+	double X;
+	double Y; 
 	
-	public Sample(int X,int Y) {
+	public Sample(double X,double Y) {
 		this.X = X;
 		this.Y = Y;
 		
 	}
 	
-	public int getX(){
+	public double getX(){
 		return X;
 	}
 	
-	public int getY(){
+	public double getY(){
 		return Y;
 	}
 	
