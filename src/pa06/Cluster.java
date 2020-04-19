@@ -20,6 +20,7 @@ public class Cluster{
 	
 	public Cluster(Sample ClusterPoint){
 		this.ClusterPoint = ClusterPoint;
+		this.SamplePoints = new ArrayList<Sample>();
 	}
 	
 	public Cluster(){
@@ -71,8 +72,6 @@ public class Cluster{
 	
 	public Sample ClosestClusterPoint() {
 
-		float distance = 0;
-		
 		Sample Closest = this.SamplePoints.get(0);
 		for(int i =0; i < this.SamplePoints.size(); i++){
 			if(Closest.Distance(this.ClusterPoint) > this.SamplePoints.get(i).Distance(this.ClusterPoint)){
