@@ -44,16 +44,16 @@ public class KMeans {
 		
 
 		// initiating cluster arraylists
-		Cluster clusters = new Cluster();
+		//Cluster clusters = new Cluster();
 		
 		// Read File
 		Km.fileRead(fileName);
 		
-		// Km.Classify (clustersNum);
-		// Km.Reclassify (clustersNum );
-//		for (int j = 0; j< clustersNum ; j++ ) {
-//			clusters[j].print();
-//		}
+		Km.Classify (clustersNum);
+		Km.Reclassify (clustersNum );
+		for (int j = 0; j< clustersNum ; j++ ) {
+		Km.clusters[j].print();
+		}
 	}
 	public void fileRead(String FileName) throws NullPointerException  {
 		
