@@ -27,19 +27,20 @@ public class KMeans {
 		
 	}
 	
-	public static void main(String[] args) throws NumberFormatException {
+	public static void main(String[] args) throws NullPointerException  {
 		// TODO Auto-generated method stub
 		Scanner input = new Scanner(System.in);
 		
 		// K is the number of clusters
 		System.out.print("K: ");
 		int clustersNum = input.nextInt();
+		KMeans Km = new KMeans(clustersNum);
 		
 		// Retrieve file
 		System.out.print("Filename: ");
 		String fileName = input.next();
 		
-		KMeans Km = new KMeans(clustersNum);
+		
 
 		// initiating cluster arraylists
 		Cluster clusters = new Cluster();
@@ -53,7 +54,7 @@ public class KMeans {
 //			clusters[j].print();
 //		}
 	}
-	public void fileRead(String FileName) {
+	public void fileRead(String FileName) throws NullPointerException  {
 		
 			File file = new File(FileName);
 		  
