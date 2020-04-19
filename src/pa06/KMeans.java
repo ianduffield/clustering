@@ -27,7 +27,7 @@ public class KMeans {
 		
 	}
 	
-	public static void main(String[] args) throws FileNotFoundException {
+	public static void main(String[] args) throws NumberFormatException {
 		// TODO Auto-generated method stub
 		Scanner input = new Scanner(System.in);
 		
@@ -49,6 +49,9 @@ public class KMeans {
 		
 		// Km.Classify (clustersNum);
 		// Km.Reclassify (clustersNum );
+//		for (int j = 0; j< clustersNum ; j++ ) {
+//			clusters[j].print();
+//		}
 	}
 	public void fileRead(String FileName) {
 		
@@ -63,9 +66,9 @@ public class KMeans {
 			    Scanner coordinates = new Scanner(line);
 			    double X = 0;
 			    double Y = 0;
-			    while (coordinates.hasNext()) {
-				X = Double.parseDouble(coordinates.next());
-				Y = Double.parseDouble(coordinates.next());
+			    while (coordinates.hasNextInt()) {
+				X = Double.valueOf(coordinates.nextInt());
+				Y = Double.valueOf( coordinates.nextInt());
 			    }
 				Sample point = new Sample(X,Y);
 				this.originalData.add(point);
