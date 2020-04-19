@@ -24,6 +24,7 @@ public class KMeans {
 	
 	public KMeans(int k){
 		this.clusters = new Cluster[k];
+		this.originalData = new Cluster();
 		
 	}
 	

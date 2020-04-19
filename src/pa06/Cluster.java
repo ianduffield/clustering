@@ -23,7 +23,7 @@ public class Cluster{
 	}
 	
 	public Cluster(){
-		
+		this.SamplePoints = new ArrayList<Sample>();
 	}
 	
 	
