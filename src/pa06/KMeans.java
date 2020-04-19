@@ -56,25 +56,25 @@ public class KMeans {
 		}
 	}
 	public void fileRead(String FileName) throws NullPointerException  {
-		
 			File file = new File(FileName);
 		  
 			Scanner scan = new Scanner(FileName);
 
 			// Part 4
 			// Reading the file line by line
+			int index = 0;
 			while(scan.hasNextLine()){
 				String line = scan.nextLine();
-			    Scanner coordinates = new Scanner(line);
+				System.out.println(line);
+			    Scanner coordinates = new Scanner(line).useDelimiter(" ");
 			    double X = 0;
 			    double Y = 0;
-			    while (coordinates.hasNextInt()) {
-				X = Double.valueOf(coordinates.nextInt());
-				Y = Double.valueOf( coordinates.nextInt());
-			    }
+			    System.out.println(coordinates.next());
+				X = Double.valueOf(Integer.parseInt(coordinates.next()));
+				Y = Double.valueOf(Integer.parseInt(coordinates.next()));
 				Sample point = new Sample(X,Y);
 				this.originalData.add(point);
-				
+				System.out.println(this.originalData.get(index++));
 			  }
 		}
 	//Initializes the clustering process but dividing the originalData into equal parts and choosing random ClusterPoints for each 
@@ -93,7 +93,7 @@ public class KMeans {
 			for(int i = 0; i < k; i++){
 				this.clusters[i] = new Cluster();
 			} for(int j = 0; j < k; j++){
-				for(int m = (size*j); m < (size*j+1); m++){
+				for(int m = (size*j); m < (size*(j+1)); m++){
 					this.clusters[j].add(this.originalData.get(m));
 				}
 			} for (int n = 0; n < k; n++){
