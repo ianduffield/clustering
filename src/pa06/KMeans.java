@@ -69,7 +69,17 @@ public class KMeans {
 		}
 	//Initializes the clustering process but dividing the originalData into equal parts and choosing random ClusterPoints for each 
 		public void Classify(int k){
-			int size = this.originalData.size()/k;
+			int size = 0;
+			
+			// If/Else statement used to change size depending on even or odd
+			if(this.originalData.size()% 2 == 0) {
+				size = this.originalData.size() / k;
+			}
+			else {
+				size = (this.originalData.size() / k) + 1;
+			}
+			
+			
 			for(int i = 0; i < k; i++){
 				this.clusters[i] = new Cluster();
 			} for(int j = 0; j < k; j++){
