@@ -96,6 +96,18 @@ public class KMeans {
 			} this.clusters[closestIndex].add(this.originalData.get(i));
 		}
 	}
+		public void loop (int k) {
+			for (int i = 0; i <= 100; i++ ) {
+				for (int j = 0; j<k ; j++ ) {
+					clusters[j].Average();
+					Reclassify(k);
+								
+				}
+				
+				
+			}
+			
+		}
 
 		
 }
