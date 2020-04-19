@@ -27,10 +27,10 @@ public class Cluster{
 	}
 	
 	
-	public void addOriginal(Sample point) {
-		this.SamplePoints.add(point);
-		
-	}
+//	public void addOriginal(Sample point) {
+//		this.SamplePoints.add(point);
+//		
+//	}
 	public void chooseClusterPoint(){
 		// Random Index for Cluster Point
 		this.ClusterPoint = this.SamplePoints.get(random.nextInt(this.SamplePoints.size()));
