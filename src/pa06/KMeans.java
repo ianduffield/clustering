@@ -3,6 +3,7 @@
  */
 package pa06;
 import java.util.*;
+import java.util.Scanner;
 import java.io.File;
 import java.io.FileNotFoundException;
 /**
@@ -34,34 +35,38 @@ public class KMeans {
 		System.out.print("K: ");
 		int clustersNum = input.nextInt();
 		
+		// Retrieve file
+		System.out.print("Filename: ");
+		String fileName = input.next();
+		
 		KMeans Km = new KMeans(clustersNum);
 
 		// initiating cluster arraylists
 		Cluster clusters = new Cluster();
 		
-				
+		// Read File
+		Km.fileRead(fileName);
 		
-		// Retrieve file
-		System.out.print("Filename: ");
-		String FileName0 = input.nextLine();
-		Km.fileRead(FileName0);
-		Km.Classify (clustersNum);
-		Km.Reclassify (clustersNum );
+		// Km.Classify (clustersNum);
+		// Km.Reclassify (clustersNum );
 	}
 	public void fileRead(String FileName) {
 		
 			File file = new File(FileName);
 		  
-		    Scanner scan = new Scanner(FileName);
-			
+			Scanner scan = new Scanner(FileName);
 
 			// Part 4
 			// Reading the file line by line
 			while(scan.hasNextLine()){
 				String line = scan.nextLine();
 			    Scanner coordinates = new Scanner(line);
-				double	X = coordinates.nextDouble();
-				double	Y = coordinates.nextDouble();
+			    double X = 0;
+			    double Y = 0;
+			    while (coordinates.hasNext()) {
+				X = Double.parseDouble(coordinates.next());
+				Y = Double.parseDouble(coordinates.next());
+			    }
 				Sample point = new Sample(X,Y);
 				this.originalData.add(point);
 				
@@ -72,7 +77,7 @@ public class KMeans {
 			int size = 0;
 			
 			// If/Else statement used to change size depending on even or odd
-			if(this.originalData.size()% 2 == 0) {
+			if(this.originalData.size() % 2 == 0) {
 				size = this.originalData.size() / k;
 			}
 			else {
