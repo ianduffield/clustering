@@ -28,7 +28,7 @@ public class KMeans {
 		
 	}
 	
-	public static void main(String[] args) throws NullPointerException  {
+	public static void main(String[] args) throws FileNotFoundException  {
 		// TODO Auto-generated method stub
 		Scanner input = new Scanner(System.in);
 		
@@ -55,26 +55,23 @@ public class KMeans {
 		Km.clusters[j].print();
 		}
 	}
-	public void fileRead(String FileName) throws NullPointerException  {
+	public void fileRead(String FileName) throws FileNotFoundException  {
 			File file = new File(FileName);
 		  
-			Scanner scan = new Scanner(FileName);
+			Scanner scan = new Scanner(file);
 
 			// Part 4
 			// Reading the file line by line
 			int index = 0;
 			while(scan.hasNextLine()){
 				String line = scan.nextLine();
-				System.out.println(line);
-			    Scanner coordinates = new Scanner(line).useDelimiter(" ");
+			    Scanner coordinates = new Scanner(line).useDelimiter("\\s+");
 			    double X = 0;
 			    double Y = 0;
-			    System.out.println(coordinates.next());
-				X = Double.valueOf(Integer.parseInt(coordinates.next()));
-				Y = Double.valueOf(Integer.parseInt(coordinates.next()));
+				X = Double.parseDouble(coordinates.next());
+				Y = Double.parseDouble(coordinates.next());
 				Sample point = new Sample(X,Y);
 				this.originalData.add(point);
-				System.out.println(this.originalData.get(index++));
 			  }
 		}
 	//Initializes the clustering process but dividing the originalData into equal parts and choosing random ClusterPoints for each 
