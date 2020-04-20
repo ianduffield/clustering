@@ -51,8 +51,10 @@ public class KMeans {
 		
 		Km.Classify (clustersNum);
 		Km.Reclassify (clustersNum );
+		Km.loop (clustersNum);
 		for (int j = 0; j< clustersNum ; j++ ) {
 		Km.clusters[j].print();
+		System.out.println("_______________");
 		}
 	}
 	public void fileRead(String FileName) throws FileNotFoundException  {
