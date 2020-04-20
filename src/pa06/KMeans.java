@@ -50,12 +50,12 @@ public class KMeans {
 		Km.fileRead(fileName);
 		
 		Km.Classify (clustersNum);
-		for (int j = 0; j< clustersNum ; j++ ) {
-			Km.clusters[j].print();
-			System.out.println("********");
-			}
+//		for (int j = 0; j< clustersNum ; j++ ) {
+//			Km.clusters[j].print();
+//			System.out.println("********");
+//			}
 		Km.Reclassify (clustersNum );
-		//Km.loop (clustersNum);
+		Km.loop (clustersNum);
 		for (int j = 0; j< clustersNum ; j++ ) {
 		Km.clusters[j].print();
 		System.out.println("_______________");
@@ -108,11 +108,16 @@ public class KMeans {
 			for(int j = 0; j < k; j++){
 				this.clusters[j] = new Cluster(this.clusters[j].ClusterPoint);
 			}
+			
 			Sample Closest = this.clusters[0].ClusterPoint;
 			int closestIndex = 0;
+			
 			for(int i = 0; i < this.originalData.size(); i++){
-				for(int z = 0; z < k; z++){				
-				if(Closest.Distance(this.originalData.get(i)) >= this.clusters[z].ClusterPoint.Distance(this.originalData.get(i)) || this.clusters[z].ClusterPoint.Distance(this.originalData.get(i))!= 0){
+				for(int z = 0; z < k; z++){		
+					
+				if(Closest.Distance(this.originalData.get(i)) >= this.clusters[z].ClusterPoint.Distance(this.originalData.get(i))){
+					//|| this.clusters[z].ClusterPoint.Distance(this.originalData.get(i))!= 0
+					
 					Closest = this.clusters[z].ClusterPoint;
 					closestIndex = z;
 				}
