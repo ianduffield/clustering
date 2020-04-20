@@ -110,7 +110,7 @@ public class KMeans {
 			}
 			Sample Closest = this.clusters[0].ClusterPoint;
 			int closestIndex = 0;
-			for(int i =0; i < this.originalData.size(); i++){
+			for(int i = 0; i < this.originalData.size(); i++){
 				for(int z = 0; z < k; z++){				
 				if(Closest.Distance(this.originalData.get(i)) >= this.clusters[z].ClusterPoint.Distance(this.originalData.get(i)) || this.clusters[z].ClusterPoint.Distance(this.originalData.get(i))!= 0){
 					Closest = this.clusters[z].ClusterPoint;
