@@ -57,7 +57,7 @@ public class KMeans {
 		Km.Reclassify (clustersNum );
 		Km.loop (clustersNum);
 		for (int j = 0; j< clustersNum ; j++ ) {
-		System.out.println ((j+1) + " Cluster");	
+		System.out.println (" Cluster" + (j+1));	
 		Km.clusters[j].print();
 		System.out.println("_______________");
 		}
