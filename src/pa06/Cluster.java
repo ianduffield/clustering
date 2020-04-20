@@ -58,7 +58,7 @@ public class Cluster{
 		}
 		System.out.print ("{ "+this.ClusterPoint.getX()+ " "+ this.ClusterPoint.getY()+"}, ");
 		System.out.print("]");
-
+		System.out.println();
 		
 	}
 	
