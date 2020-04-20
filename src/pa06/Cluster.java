@@ -27,11 +27,6 @@ public class Cluster{
 		this.SamplePoints = new ArrayList<Sample>();
 	}
 	
-	
-//	public void addOriginal(Sample point) {
-//		this.SamplePoints.add(point);
-//		
-//	}
 	public void chooseClusterPoint(){
 		// Random Index for Cluster Point
 		this.ClusterPoint = this.SamplePoints.get(random.nextInt(this.SamplePoints.size()));
@@ -62,14 +57,6 @@ public class Cluster{
 		System.out.println();
 		
 	}
-	
-//	public float ClusterPointDistance(){
-//		float distance = 0;
-//		for(int i = 0; i < SamplePoints.size(); i++){
-//			distance += ClusterPoint.Distance(SamplePoints.get(i)); 
-//		}
-//		return distance;
-//	}
 	
 	public Sample ClosestClusterPoint() {
 
@@ -158,6 +145,18 @@ public class Cluster{
 		return Points.get(index);
 	}
 }
-
+	
+	public void addOriginal(Sample point) {
+		this.SamplePoints.add(point);
+		
+	}
+	
+	//	public float ClusterPointDistance(){
+//		float distance = 0;
+//		for(int i = 0; i < SamplePoints.size(); i++){
+//			distance += ClusterPoint.Distance(SamplePoints.get(i)); 
+//		}
+//		return distance;
+//	}
 	
 	*/

@@ -42,18 +42,11 @@ public class KMeans {
 		String fileName = input.next();
 		
 		
-
-		// initiating cluster arraylists
-		//Cluster clusters = new Cluster();
-		
 		// Read File
 		Km.fileRead(fileName);
 		
 		Km.Classify (clustersNum);
-//		for (int j = 0; j< clustersNum ; j++ ) {
-//			Km.clusters[j].print();
-//			System.out.println("********");
-//			}
+
 		Km.Reclassify (clustersNum );
 		Km.loop (clustersNum);
 		System.out.println();
@@ -87,27 +80,16 @@ public class KMeans {
 		}
 	//Initializes the clustering process but dividing the originalData into equal parts and choosing random ClusterPoints for each 
 		public void Classify(int k){
-			int size = 0;
-			
-			// If/Else statement used to change size depending on even or odd
-			if(this.originalData.size() % 2 == 0) {
-				size = this.originalData.size() / k;
-			}
-			else {
-				size = (this.originalData.size() / k) + 1;
+			for (int j = 0; j< k ; j++ ) {
+				this.clusters[j] = new Cluster();
+				this.originalData.chooseClusterPoint();
+				this.clusters[j].ClusterPoint = this.originalData.ClusterPoint ;
 			}
 			
 			
-			for(int i = 0; i < k; i++){
-				this.clusters[i] = new Cluster();
-			} for(int j = 0; j < k; j++){
-				for(int m = (size*j); m < (size*(j+1)); m++){
-					this.clusters[j].add(this.originalData.get(m));
-				}
-			} for (int n = 0; n < k; n++){
-				this.clusters[n].chooseClusterPoint();
-			}
 		}
+			
+
 	
 		public void Reclassify(int k){
 			for(int j = 0; j < k; j++){
@@ -152,8 +134,34 @@ public class KMeans {
 
 
 
+// initiating cluster arraylists
+//Cluster clusters = new Cluster();
 
 
+//for (int j = 0; j< clustersNum ; j++ ) {
+//Km.clusters[j].print();
+//System.out.println("********");
+//}
 
 
+//int size = 0;			
+//// If/Else statement used to change size depending on even or odd
+//if(this.originalData.size() % 2 == 0) {
+//	size = this.originalData.size() / k;
+//}
+//else {
+//	size = (this.originalData.size() / k) + 1;
+//}
+//
+//
+//for(int i = 0; i < k; i++){
+//	this.clusters[i] = new Cluster();
+//} for(int j = 0; j < k; j++){
+//	for(int m = (size*j); m < (size*(j+1)); m++){
+//		this.clusters[j].add(this.originalData.get(m));
+//	}
+//} for (int n = 0; n < k; n++){
+//	this.clusters[n].chooseClusterPoint();
+//}
+//}
 
