@@ -57,6 +57,7 @@ public class KMeans {
 		Km.Reclassify (clustersNum );
 		Km.loop (clustersNum);
 		System.out.println ("The following are the clusters formed. Cluster centers can be found seperated by a comma at the end of the cluster list.");
+		System.out.println();
 		for (int j = 0; j< clustersNum ; j++ ) {
 		System.out.println ("Cluster " + (j+1));
 		System.out.println();
