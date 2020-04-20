@@ -53,7 +53,7 @@ public class Cluster{
 	public void print () {
 		System.out.println ("[");
 		for (int i=0; i< this.SamplePoints.size();i++) {
-			System.out.print("{"+SamplePoints.get(i).getX() +" " + SamplePoints.get(i).getY()+"}, ");
+			System.out.println("{"+SamplePoints.get(i).getX() +" " + SamplePoints.get(i).getY()+"}, ");
 
 		}
 		System.out.print ("{ "+this.ClusterPoint.getX()+ " "+ this.ClusterPoint.getY()+"}, ");
