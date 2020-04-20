@@ -50,8 +50,12 @@ public class KMeans {
 		Km.fileRead(fileName);
 		
 		Km.Classify (clustersNum);
+		for (int j = 0; j< clustersNum ; j++ ) {
+			Km.clusters[j].print();
+			System.out.println("********");
+			}
 		Km.Reclassify (clustersNum );
-		Km.loop (clustersNum);
+		//Km.loop (clustersNum);
 		for (int j = 0; j< clustersNum ; j++ ) {
 		Km.clusters[j].print();
 		System.out.println("_______________");
